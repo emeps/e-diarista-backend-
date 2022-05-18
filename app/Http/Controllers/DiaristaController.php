@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Diarista;
 use Illuminate\Http\Request;
+use App\Services\ViaCEP;
 
 class DiaristaController extends Controller
 {
+    public function __construct(protected ViaCEP $Viacep){
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,6 +42,7 @@ class DiaristaController extends Controller
     public function store(Request $request)
     {
         $dados = $request->except('_token');
+        $dados['ibge'] = $this->Viacep->buscar($dados['cep'])['ibge'];
         Diarista::create($dados);
         return redirect()->route('home')->with('success', 'Cadastrado com sucesso');
     }
@@ -76,7 +81,7 @@ class DiaristaController extends Controller
     {
         $diarista = Diarista::findOrFail($id);
         $dados = $request->except('_token');
-
+        $dados['ibge'] = $this->Viacep->buscar($dados['cep'])['ibge'];
         $diarista->update($dados);
         return redirect()->route('home');
 

@@ -7,12 +7,12 @@ class ViaCEP{
         $url = sprintf('https://viacep.com.br/ws/%s/json/', $cep);
         $reposta = Http::get($url);
         if($reposta->failed()){
-            return false
+            return false;
         }
         $dados = $reposta->json();
         if(isset($dados['erro']) && $dados['erro'] === true){
             return false;
         }
-        return $dados
+        return $dados;
     }
 }

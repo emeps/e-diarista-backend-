@@ -43,10 +43,7 @@
               <label for="cep" class="form-label">CEP</label>
               <input type="number" class="form-control" name="cep" id="cep" aria-describedby="emailHelp">
             </div>
-            <div class="mb-3">
-                <label for="ibge" class="form-label">IBGE</label>
-                <input type="text" class="form-control" name="ibge" id="ibge" aria-describedby="emailHelp">
-              </div>
+
             <div class="mb-3">
               <label for="estado" class="form-label">Estado</label>
               <input type="text" class="form-control" name="estado" id="estado" aria-describedby="emailHelp">

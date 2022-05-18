@@ -44,10 +44,6 @@
               <input value= "{{$diarista->cep}}"type="number" class="form-control" name="cep" id="cep" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="ibge" class="form-label">IBGE</label>
-              <input value= "{{$diarista->ibge}}"type="text" class="form-control" name="ibge" id="ibge" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
               <label for="estado" class="form-label">Estado</label>
               <input value= "{{$diarista->estado}}"type="text" class="form-control" name="estado" id="estado" aria-describedby="emailHelp">
             </div>
